@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <title>お客様情報登録</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-4">お客様情報登録</h2>
+        <form th:action="@{/customer/post}" th:object="${customer}" method="post" class="row g-3">
+            <div class="col-12">
+                <label for="name" class="form-label">名前</label>
+                <input type="text" th:field="*{name}" class="form-control" id="name">
+                <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+            </div>
+            <div class="col-12">
+                <label for="age" class="form-label">年齢</label>
+                <input type="number" th:field="*{age}" class="form-control" id="age">
+                <div class="text-danger" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">住所</label>
+                <textarea th:field="*{address}" class="form-control" id="address" rows="3"></textarea>
+                <div class="text-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+            </div>
+            <div class="col-12">
+                <label for="joinDate" class="form-label">加入日</label>
+                <input type="date" th:field="*{joinDate}" class="form-control" id="joinDate">
+                <div class="text-danger" th:if="${#fields.hasErrors('joinDate')}" th:errors="*{joinDate}"></div>
+            </div>
+            <div class="col-12">
+                <label for="gender" class="form-label">性別</label>
+                <select th:field="*{gender}" class="form-select" id="gender">
+                    <option value="">性別をお選びください。</option>
+                    <option value="Male">男</option>
+                    <option value="Female">女</option>
+                </select>
+                <div class="text-danger" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div>
+            </div>
+            <div class="col-12">
+                <label for="occupation" class="form-label">職業</label>
+                <input type="text" th:field="*{occupation}" class="form-control" id="occupation">
+                <div class="text-danger" th:if="${#fields.hasErrors('occupation')}" th:errors="*{occupation}"></div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
