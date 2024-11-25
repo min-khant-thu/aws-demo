@@ -9,6 +9,7 @@
 
 ## VS codeの拡張一覧
 ### Java用
+以下の拡張のインストール先はコンテナーです。
 - Debugger for Java
 - Extension Pack for Java
 - Gradle for Java
@@ -42,7 +43,8 @@
 - 止めたい場合は `docker compose stop` を実行
 
 ## Localstackの設定
-以下のコマンドでlocalstackの初期設定を行う
+以下のコマンドでlocalstackの初期設定を行う  
+**`localstack-init/init.sh`の改行が `CRLF`になっている場合、`LF`に変更**
 
 ```
 docker compose exec localstack bash
@@ -57,5 +59,10 @@ sh ./init.sh
 - ファイルディレクトリに `/app`を選択
 - `SpringlocalstackApplication.java` クラスに `Run Java`でアプリを起動
 
+### Hot Reload
+- Hot Reloadをテストしたい場合、VS Codeの`実行＆デバッグ`タブから`実行＆デバッグ`ボタンを押して起動してください。
+- ソースコードを修正した後、表示されているメニューから`Hot Code Replace`（雷アイコン）を押して最新版のソースコードをロードしてください。
+
+
 ## 確認
-http://localhost:8080 にアクセスし、`お客様情報登録` 画面が表示されれば環境構築完了
+http://localhost:8080/customer/register にアクセスし、`お客様情報登録` 画面が表示されれば環境構築完了
