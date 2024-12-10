@@ -54,6 +54,20 @@ sh ./init.sh
 **localstackコンテナが再起動または停止された場合、コンテナ上に作成されているリソースが全部削除されます。
 コンテナが再起動または起動された後、上記のコマンドを必ず実行してください。**
 
+## ElasticSearchコンテナの設定
+- docker-compose.ymlと同じディレクトリに以下の値で `.env`ファイルを作成。[参考リンク](https://qiita.com/takeo-furukubo/items/c2f194679afadc06a4e9)
+```
+STACK_VERSION = 8.6.2
+ELASTIC_PASSWORD = elastic passwordを設定
+KIBANA_PASSWORD = kibana passwordを設定
+ES_PORT = 9200
+CLUSTER_NAME = test_cluster
+LICENSE = basic
+MEM_LIMIT = 1073741824
+KIBANA_PORT = 5601
+```
+- http://localhost:5601 にアクセスし、kibanaのログイン画面が表示されれば完了です。
+
 ## SpringBootアプリの起動
 - VS Codeで `Ctrl+Shift+P` を押して表示される中から `開発コンテナー：実行中のコンテナーにアタッチ`を選択
 - ファイルディレクトリに `/app`を選択

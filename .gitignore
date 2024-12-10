@@ -1,2 +1,3 @@
 /localstack-init/tmp.txt
 .vscode
+.env
