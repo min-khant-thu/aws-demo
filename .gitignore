@@ -1,3 +1,4 @@
-/localstack-init/tmp.txt
+/localstack-resources/tmp.txt
+/localstack-resources/lambda/*.zip
 .vscode
 .env

@@ -1,0 +1,29 @@
+{
+    "StartAt": "CheckNameExists",
+    "States": {
+      "CheckNameExists": {
+        "Type": "Task",
+        "Resource": "Lambda ARN",
+        "InputPath": "$",
+        "ResultPath": "$.output",
+        "Next": "ChoiceState"
+      },
+      "ChoiceState": {
+        "Type": "Choice",
+        "Choices": [
+           {
+                "Variable": "$.output.nameExists",
+                "BooleanEquals": true,
+                "Next": "SuccessState"
+           }
+        ],
+        "Default": "FailState"
+      },
+      "SuccessState": {
+        "Type": "Succeed"
+      },
+      "FailState": {
+        "Type": "Fail"
+      }
+    }
+  }
