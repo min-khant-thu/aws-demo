@@ -79,4 +79,4 @@ KIBANA_PORT = 5601
 
 
 ## 確認
-http://localhost:8080/customer/register にアクセスし、`お客様情報登録` 画面が表示されれば環境構築完了
+http://localhost:8080/customer/register にアクセスし、`お客様情報登録` 画面が表示されれば環境構築完了     
